@@ -1,0 +1,86 @@
+- name: Install EPEL
+  yum:
+    name: epel-release
+
+- name: Install Nginx + Fail2ban
+  yum:
+    name: "{{ item }}"
+  with_items:
+    - nginx
+    - fail2ban
+
+- name: Ensure nginx is running
+  service:
+    name: nginx
+    state: started
+
+- name: Ensure Nginx diretories exist
+  file:
+    state: directory
+    path: "/etc/nginx/{{ item }}/"
+  with_items:
+   - sites-enabled
+   - sites-available
+   - ssl
+
+- name: Add cert files
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/nginx/ssl/"
+    mode: 0640
+    owner: root
+    group: nginx
+  with_items: "{{ ssl_files }}"
+  notify:
+    - reload nginx
+
+- name: Setup Nginx Config
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+  notify:
+    - reload nginx
+
+- name: Use site Config
+  template:
+    src: dropshare.conf.j2
+    dest: /etc/nginx/sites-available/dropshare.conf
+  notify:
+    - reload nginx
+
+- name: Symlink site Config
+  file:
+    state: link
+    src: /etc/nginx/sites-available/dropshare.conf
+    dest: /etc/nginx/sites-enabled/dropshare.conf
+
+- name: Create user
+  user:
+    name: dropshare
+
+- name: Create group
+  group:
+    name: www-data
+
+- name: Add users to www-data
+  user:
+    name: "{{ item }}"
+    groups: "{{ item }},www-data"
+  with_items:
+    - dropshare
+    - nginx
+
+- name: Create public_html
+  file:
+    state: directory
+    path: /public_html
+    owner: dropshare
+    group: www-data
+    mode: 0770
+
+- name: Add dropshare key
+  authorized_key:
+    user: dropshare
+    key: "{{ lookup('file', pub_key_location) }}"
+
+- meta: flush_handlers
