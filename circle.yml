@@ -1,0 +1,11 @@
+machine:
+  python:
+    version: 2.7
+
+dependencies:
+  cache_directories:
+    - "~/bin"
+  pre:
+    - pip install pyyaml jinja2 testinfra ansible-2.2.1.0
+    - mkdir -p ~/bin
+    - ./circle/deps.sh
