@@ -9,3 +9,10 @@ dependencies:
     - pip install pyyaml jinja2 testinfra ansible==2.2.1.0
     - mkdir -p ~/bin
     - ./circle/deps.sh
+
+tests:
+  override:
+    - cat myfile.txt
+
+  post:
+    - echo "Always run."
