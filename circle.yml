@@ -10,7 +10,7 @@ dependencies:
     - mkdir -p ~/bin
     - ./circle/deps.sh
 
-tests:
+test:
   override:
     - cat myfile.txt
 
