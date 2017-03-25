@@ -11,8 +11,6 @@ dependencies:
     - ./circle/deps.sh
 
 test:
-  override:
-    - cat myfile.txt
-
-  post:
-    - echo "Always run."
+  pre:
+    - cd circle/terraform
+    - terraform plan
