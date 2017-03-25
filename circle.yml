@@ -12,5 +12,4 @@ dependencies:
 
 test:
   pre:
-    - cd circle/terraform
-    - terraform plan
+    - terraform plan circle/terraform
