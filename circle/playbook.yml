@@ -3,8 +3,8 @@
   remote_user: root
   gather_facts: False
   roles:
-    - { role: dropshare, dir: '../../../' }
-    - { role: tests, dir: '../tests/test_role' }
+    - { role: dropshare, dir: '/home/ubuntu/' }
+    - { role: test_role, dir: '/home/ubuntu/dropshare/circle/tests/' }
 
 
   vars:
