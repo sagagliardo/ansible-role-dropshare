@@ -15,4 +15,4 @@ test:
     - terraform plan circle/terraform
     - terraform apply circle/terraform
   post:
-    - terraform destroy circle/terraform
+    - terraform destroy circle/terraform -force
