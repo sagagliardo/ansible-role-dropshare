@@ -13,3 +13,6 @@ dependencies:
 test:
   pre:
     - terraform plan circle/terraform
+    - terraform apply circle/terraform
+  post:
+    - terraform destroy circle/terraform

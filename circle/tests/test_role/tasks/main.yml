@@ -1,0 +1,6 @@
+- name: install testinfra
+  pip:
+    name: testinfra
+
+- name: run tests
+  script: circle/tests/test_default.py
