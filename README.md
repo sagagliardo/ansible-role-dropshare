@@ -13,9 +13,9 @@ This role looks for server.crt and server.key, so make sure to have one availabl
 Role Variables
 --------------
 
-server_hostname -- The hostname of your server
-pub_key_location -- Where Ansible can find the pub key for Dropshare, to add to authorized_keys for the dropshare user
-ssl_files -- The SSL crt and key files. Add them similar to the example playbook below, as an array.
+* server_hostname -- The hostname of your server
+* pub_key_location -- Where Ansible can find the pub key for Dropshare, to add to authorized_keys for the dropshare user
+* ssl_files -- The SSL crt and key files. Add them similar to the example playbook below, as an array.
 
 Dependencies
 ------------
