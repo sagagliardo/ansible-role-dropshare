@@ -5,6 +5,15 @@
   pip:
     name: testinfra
 
-- name: run tests
-  script: "testinfra -v {{ item }}"
+- name: copy over script files
+  copy:
+    src: "/home/ubuntu/dropshare/circle/tests/{{ item }}"
+    dest: "/root"
+    mode: 0700
+    owner: root
+    group: root
+  with_items: "{{ tests_to_run }}"
+
+- name: execute tests
+  shell: "python /root/{{ item }}"
   with_items: "{{ tests_to_run }}"
