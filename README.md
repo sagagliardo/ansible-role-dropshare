@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/sagagliardo/dropshare/tree/master.svg?style=shield)](https://circleci.com/gh/sagagliardo/dropshare/tree/master)
+
 Dropshare
 =========
 
