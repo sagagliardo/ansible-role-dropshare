@@ -6,4 +6,4 @@
     name: testinfra
 
 - name: run tests
-  script: circle/tests/test_default.py
+  script: "{{ tests_to_run }}"
