@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "dropshare_test" {
-  name = "dropshare_test_server"
+  name = "dropshare_test_server_${var.build_num}"
   image = "centos-7-x64"
   region = "nyc3"
   size = "512mb"

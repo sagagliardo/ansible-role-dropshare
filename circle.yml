@@ -1,6 +1,8 @@
 machine:
   python:
     version: 2.7
+  environment:
+    TF_VAR_build_num: ${CIRCLE_BUILD_NUM}
 
 dependencies:
   cache_directories:
@@ -15,4 +17,4 @@ test:
     - terraform plan circle/terraform
     - terraform apply circle/terraform
   post:
-    - terraform destroy -force circle/terraform 
+    - terraform destroy -force circle/terraform
