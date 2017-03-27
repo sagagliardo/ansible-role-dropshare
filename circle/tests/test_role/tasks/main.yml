@@ -15,5 +15,5 @@
   with_items: "{{ tests_to_run }}"
 
 - name: execute tests
-  shell: "python /root/{{ item }}"
+  shell: "testinfra -v /root/{{ item }}"
   with_items: "{{ tests_to_run }}"
