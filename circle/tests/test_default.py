@@ -21,12 +21,6 @@ def test_nginx_is_running(Service):
     assert nginx.is_enabled
 
 
-def test_fail2ban_is_running(Service):
-    fail2ban = Service("fail2ban")
-    assert fail2ban.is_running
-    assert fail2ban.is_enabled
-
-
 ### Check users
 def test_for_dropshare_user(User):
     dropshare_user = User("dropshare")
@@ -35,7 +29,7 @@ def test_for_dropshare_user(User):
 ### Check groups
 def test_for_www_data_group(Group):
     www_data = Group("www-data")
-    assert www_data.exits
+    assert www_data.exists
 
 
 #### Check Files
@@ -67,15 +61,15 @@ def test_dropshare_link(File):
     dropshare_link = File("/etc/nginx/sites-enabled/dropshare.conf")
     assert dropshare_link.exists
     assert dropshare_link.is_symlink
-    assert dropshare_link.linked_to("/etc/nginx/sites-available/dropshare.conf")
+    assert dropshare_link.linked_to == "/etc/nginx/sites-available/dropshare.conf"
 
 def test_public_html_directory(File):
     public_html = File("/public_html")
     assert public_html.exists
     assert public_html.is_directory
-    assert public_html.user("dropshare")
-    assert public_html.group("www-data")
-    assert public_html.mode("0770")
+    assert public_html.user == "dropshare"
+    assert public_html.group == "www-data"
+    assert public_html.mode == "0770"
 
 def test_dropshare_ssh_key(File):
     dropshare_key = File("/home/dropshare/.ssh/authorized_keys")
