@@ -13,6 +13,7 @@
     ssl_files:
       - /home/ubuntu/dropshare/circle/server.crt
       - /home/ubuntu/dropshare/circle/server.key
+    pip_script_location: "/home/ubuntu/bin/get-pip.py"
 
   pre_tasks:
   - name: waiting for server

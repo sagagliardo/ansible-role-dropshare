@@ -1,3 +1,6 @@
+- name: Install PIP
+  script: {{ pip_script_location }}
+
 - name: install testinfra
   pip:
     name: testinfra
