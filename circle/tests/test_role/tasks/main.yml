@@ -6,4 +6,5 @@
     name: testinfra
 
 - name: run tests
-  script: "{{ tests_to_run }}"
+  script: "{{ item }}"
+  with_items: "{{ tests_to_run }}"
