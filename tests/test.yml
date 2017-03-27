@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - dropshare
+
+  vars:
+    server_hostname: 'myserver.internal'
+    pub_key_location: 'test.pub'
+    ssl_files:
+      - server.crt
+      - server.key
