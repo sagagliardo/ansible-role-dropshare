@@ -69,7 +69,7 @@ def test_public_html_directory(File):
     assert public_html.is_directory
     assert public_html.user == "dropshare"
     assert public_html.group == "www-data"
-    assert public_html.mode == "0770"
+    assert public_html.mode == 0770
 
 def test_dropshare_ssh_key(File):
     dropshare_key = File("/home/dropshare/.ssh/authorized_keys")
