@@ -15,7 +15,7 @@
       - /home/ubuntu/dropshare/circle/server.key
     pip_script_location: "/home/ubuntu/bin/get-pip.py"
     tests_to_run:
-      - test_default.py
+      - /home/ubuntu/dropshare/circle/tests/test_default.py
 
   pre_tasks:
   - name: waiting for server
