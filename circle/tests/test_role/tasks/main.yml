@@ -13,7 +13,3 @@
     owner: root
     group: root
   with_items: "{{ tests_to_run }}"
-
-- name: execute tests
-  shell: "testinfra -v /root/{{ item }}"
-  with_items: "{{ tests_to_run }}"
