@@ -9,10 +9,10 @@
 
   vars:
     server_hostname: 'myserver.internal'
-    pub_key_location: '~/test.pub'
+    pub_key_location: '/home/ubuntu/dropshare/circle/test.pub'
     ssl_files:
-      - circle/ssl_certs/server.crt
-      - circle/ssl_certs/server.key
+      - /home/ubuntu/dropshare/circle/server.crt
+      - /home/ubuntu/dropshare/circle/server.key
 
   pre_tasks:
   - name: waiting for server
