@@ -3,10 +3,12 @@
 Dropshare
 =========
 
-An Ansible role for installing Dropshare
+An Ansible role for installing a Dropshare server
 
 Requirements
 ------------
+
+This role only sets up a server for use with a dropshare client via SSH. You still need Dropshare installed on the client end (your end) to utilize this.
 
 This role looks for server.crt and server.key, so make sure to have one available or generate your own. It is also based around Centos 7 at the moment, with support for more server types coming soon.
 

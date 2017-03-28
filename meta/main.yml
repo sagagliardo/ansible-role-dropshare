@@ -1,6 +1,6 @@
 galaxy_info:
   author: Stephen Gagliardo
-  description: An Ansible role to install Dropshare
+  description: An Ansible role to install a Dropshare server
   #company: your company (optional)
 
   # If the issue tracker for your role is not on github, uncomment the
