@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/sagagliardo/dropshare/tree/master.svg?style=shield)](https://circleci.com/gh/sagagliardo/dropshare/tree/master)
+[![CircleCI](https://circleci.com/gh/sagagliardo/ansible_dropshare/tree/master.svg?style=shield)](https://circleci.com/gh/sagagliardo/ansible_dropshare/tree/master)
 
 Dropshare
 =========
