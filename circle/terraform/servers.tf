@@ -6,6 +6,6 @@ resource "digitalocean_droplet" "dropshare_test" {
   ssh_keys = ["${var.pubkey}"]
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i '${self.ipv4_address},' circle/playbook.yml -u root --extra-vars 'ip_address=${self.ipv4_address}'"
+    command = "ansible-playbook -i '${self.ipv4_address},' circle/playbook.yml -u root --extra-vars 'ip_address=${self.ipv4_address}' -vvv"
   }
 }
