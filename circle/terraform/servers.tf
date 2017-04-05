@@ -8,10 +8,4 @@ resource "digitalocean_droplet" "dropshare_test" {
   provisioner "local-exec" {
     command = "ansible-playbook -i '${self.ipv4_address},' circle/playbook.yml -u root --extra-vars 'ip_address=${self.ipv4_address}'"
   }
-
-  provisioner "remote-exec" {
-    inline = [
-    "testinfra -v /root/test_default.py",
-    ]
-  }
 }
