@@ -4,7 +4,7 @@
   gather_facts: False
   roles:
     - { role: /home/ubuntu/ansible_dropshare }
-    - { role: /home/ubuntu/ansible_dropshare/circle/tests/test_role }
+    - { role: ~/bin/roles/naftulikay.degoss, version: "0.3.1", tests: /home/ubuntu/ansible_dropshare/circle/goss_tests }
 
 
   vars:

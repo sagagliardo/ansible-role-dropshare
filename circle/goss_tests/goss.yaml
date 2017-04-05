@@ -1,0 +1,8 @@
+port:
+  tcp:80:
+    listening: true
+
+service:
+  nginx:
+    enabled: true
+    running: true
