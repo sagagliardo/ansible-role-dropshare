@@ -4,7 +4,7 @@
   gather_facts: False
   roles:
     - { role: /home/ubuntu/ansible_dropshare }
-    - { role: ~/bin/roles/naftulikay.degoss, version: "0.3.1", tests: /home/ubuntu/ansible_dropshare/circle/goss_tests }
+    - { role: ~/bin/roles/naftulikay.degoss, version: "0.3.1", tests: /home/ubuntu/ansible_dropshare/circle/goss_tests/goss.yaml }
 
 
   vars:
@@ -14,8 +14,6 @@
       - /home/ubuntu/ansible_dropshare/circle/server.crt
       - /home/ubuntu/ansible_dropshare/circle/server.key
     pip_script_location: "/home/ubuntu/bin/get-pip.py"
-    tests_to_run:
-      - test_default.py
 
   pre_tasks:
   - name: waiting for server
