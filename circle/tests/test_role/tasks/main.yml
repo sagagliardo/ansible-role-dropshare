@@ -7,7 +7,7 @@
 
 - name: copy over script files
   copy:
-    src: "/home/ubuntu/ansible_dropshare/circle/tests/{{ item }}"
+    src: "/home/ubuntu/ansible-role-dropshare/circle/tests/{{ item }}"
     dest: "/root"
     mode: 0700
     owner: root
