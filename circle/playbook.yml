@@ -3,16 +3,15 @@
   remote_user: root
   gather_facts: False
   roles:
-    - { role: /home/ubuntu/ansible_dropshare }
-    - { role: /home/ubuntu/ansible_dropshare/circle/tests/test_role }
-
-
+    - { role: /home/ubuntu/ansible-role-dropshare }
+    - { role: /home/ubuntu/ansible-role-dropshare/circle/tests/test_role }
+    
   vars:
     server_hostname: 'myserver.internal'
-    pub_key_location: '/home/ubuntu/ansible_dropshare/circle/test.pub'
+    pub_key_location: '/home/ubuntu/ansible-role-dropshare/circle/test.pub'
     ssl_files:
-      - /home/ubuntu/ansible_dropshare/circle/server.crt
-      - /home/ubuntu/ansible_dropshare/circle/server.key
+      - /home/ubuntu/ansible-role-dropshare/circle/server.crt
+      - /home/ubuntu/ansible-role-dropshare/circle/server.key
     pip_script_location: "/home/ubuntu/bin/get-pip.py"
     tests_to_run:
       - test_default.py
