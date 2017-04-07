@@ -6,3 +6,7 @@ service:
   nginx:
     enabled: true
     running: true
+
+package:
+  fail2ban:
+    installed: true
