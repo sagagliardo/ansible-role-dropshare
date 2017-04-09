@@ -22,7 +22,7 @@ fi
 
 DEGOSS_URL="https://github.com/sagagliardo/ansible-role-degoss/archive/directories_fix.zip"
 
-if [ ! -f "${CIRCLECI_CACHE_DIR}/roles/ansible-role-degoss-directories_fix" ]; then
+if [ ! -d "${CIRCLECI_CACHE_DIR}/roles/ansible-role-degoss-directories_fix" ]; then
   wget -O /tmp/degoss.zip "${DEGOSS_URL}"
   unzip -d "${CIRCLECI_CACHE_DIR}/roles" /tmp/degoss.zip
 fi
