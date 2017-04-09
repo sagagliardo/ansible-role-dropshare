@@ -4,7 +4,7 @@
   gather_facts: False
   roles:
     - { role: /home/ubuntu/ansible-role-dropshare }
-    - { role: /home/ubuntu/bin/roles/ansible-role-degoss-directories-fix, version: "0.3.1", tests: ["/home/ubuntu/ansible-role-dropshare/circle/goss_tests/goss.yml"] }
+    - { role: /home/ubuntu/bin/roles/ansible-role-degoss-directories_fix, version: "0.3.1", tests: ["/home/ubuntu/ansible-role-dropshare/circle/goss_tests/goss.yml"] }
 
 
   vars:
