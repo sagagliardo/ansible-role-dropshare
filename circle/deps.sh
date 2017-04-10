@@ -19,3 +19,10 @@ PIP_URL="https://bootstrap.pypa.io/get-pip.py"
 if [ ! -f "${CIRCLECI_CACHE_DIR}/get-pip.py" ]; then
   wget -O "${CIRCLECI_CACHE_DIR}/get-pip.py" "${PIP_URL}"
 fi
+
+DEGOSS_URL="https://github.com/sagagliardo/ansible-role-degoss/archive/directories_fix.zip"
+
+if [ ! -d "${CIRCLECI_CACHE_DIR}/roles/ansible-role-degoss-directories_fix" ]; then
+  wget -O /tmp/degoss.zip "${DEGOSS_URL}"
+  unzip -d "${CIRCLECI_CACHE_DIR}/roles" /tmp/degoss.zip
+fi

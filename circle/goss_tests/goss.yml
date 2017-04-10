@@ -1,0 +1,58 @@
+package:
+  fail2ban:
+    installed: true
+  nginx:
+    installed: true
+  epel-release:
+    installed: true
+
+user:
+  dropshare:
+    exists: true
+
+group:
+  www-data:
+    exists: true
+
+file:
+  /etc/nginx/ssl/server.crt:
+    exists: true
+    filetype: file
+    owner: root
+    group: nginx
+    mode: "0640"
+  /etc/nginx/ssl/server.key:
+    exists: true
+    filetype: file
+    owner: root
+    group: nginx
+    mode: "0640"
+  /etc/nginx/nginx.conf:
+    exists: true
+    filetype: file
+    contains: ["worker_connections"]
+  /etc/nginx/sites-available/dropshare.conf:
+    exists: true
+    filetype: file
+    contains: ["443"]
+  /etc/nginx/sites-enabled/dropshare.conf:
+    exists: true
+    filetype: symlink
+    linked-to: /etc/nginx/sites-available/dropshare.conf
+  /public_html:
+    exists: true
+    filetype: directory
+    owner: dropshare
+    group: www-data
+    mode: "0770"
+  /home/dropshare/.ssh/authorized_keys:
+    exists: true
+
+service:
+  nginx:
+    enabled: true
+    running: true
+
+port:
+  tcp:80:
+    listening: true

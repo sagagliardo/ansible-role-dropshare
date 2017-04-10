@@ -10,6 +10,7 @@ dependencies:
   pre:
     - pip install pyyaml jinja2 testinfra ansible==2.2.1.0
     - mkdir -p ~/bin
+    - mkdir -p ~/bin/roles
     - ./circle/deps.sh
 
 test:
