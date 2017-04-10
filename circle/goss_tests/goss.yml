@@ -3,7 +3,7 @@ package:
     installed: true
   nginx:
     installed: true
-  epel:
+  epel-release:
     installed: true
 
 user:
@@ -20,13 +20,13 @@ file:
     filetype: file
     owner: root
     group: nginx
-    mode: 0640
+    mode: "0640"
   /etc/nginx/ssl/server.key:
     exists: true
     filetype: file
     owner: root
     group: nginx
-    mode: 0640
+    mode: "0640"
   /etc/nginx/nginx.conf:
     exists: true
     filetype: file
@@ -44,7 +44,7 @@ file:
     filetype: directory
     owner: dropshare
     group: www-data
-    mode: 0770
+    mode: "0770"
   /home/dropshare/.ssh/authorized_keys:
     exists: true
 
