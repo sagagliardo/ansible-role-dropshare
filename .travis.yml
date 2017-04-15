@@ -29,7 +29,7 @@ install:
   - ansible --version
 
   # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../\nprivate_key_file=../priv_key' > ansible.cfg
+  - printf '[defaults]\nhash_behavior=merge\nhost_key_checking=False\nroles_path=../\nprivate_key_file=../priv_key' > ansible.cfg
 
   # Drop SSH key required to test role
   - printf "$DO_TESTS_KEY" > ../priv_key
