@@ -10,7 +10,7 @@ cache:
   - ~/bin
 
 # Use the old container infrastructure
-sudo: false
+sudo: required
 
 # Install ansible
 addons:
