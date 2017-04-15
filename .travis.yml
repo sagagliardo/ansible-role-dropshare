@@ -34,9 +34,9 @@ install:
 
   # Drop SSH key required to test role
   - printf $DO_TESTS_KEY
-  - printf $DO_TESTS_KEY > ../priv_key
-  - chmod 0600 ../priv_key
-  - cat ../priv_key
+  - printf $DO_TESTS_KEY > priv_key
+  - chmod 0600 priv_key
+  - cat priv_key
 
   # install custom ansible-role-degoss for tests
   - ansible-galaxy install https://github.com/sagagliardo/ansible-role-degoss/archive/ansible-role-degoss.tar.gz
