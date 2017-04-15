@@ -4,7 +4,7 @@
   gather_facts: False
   roles:
     - { role: ansible-role-dropshare }
-    - { role: ansible-role-degoss version: "0.3.1", tests: ["~/tests/goss_tests/goss.yml"] }
+    - { role: ansible-role-degoss, version: "0.3.1", tests: ["~/tests/goss_tests/goss.yml"] }
 
 
   vars:
