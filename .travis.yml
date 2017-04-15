@@ -33,6 +33,7 @@ install:
   - cat ansible.cfg
 
   # Drop SSH key required to test role
+  - echo $DO_TESTS_KEY
   - printf $DO_TESTS_KEY
   - printf $DO_TESTS_KEY > priv_key
   - chmod 0600 priv_key
