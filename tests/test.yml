@@ -18,6 +18,9 @@
   - name: waiting for server
     local_action: wait_for port=22 host="{{ ip_address }}"
 
+  - name: install SSH key
+    local_action: file=../priv_key
+
   - pause:
       seconds: 15
 
