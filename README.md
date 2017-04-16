@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/sagagliardo/ansible-role-dropshare/tree/master.svg?style=shield)](https://circleci.com/gh/sagagliardo/ansible-role-dropshare/tree/master)
+[![Build Status](https://travis-ci.org/sagagliardo/ansible-role-dropshare.svg?branch=master)](https://travis-ci.org/sagagliardo/ansible-role-dropshare)
 
 Dropshare
 =========
